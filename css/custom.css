@@ -1,0 +1,49 @@
+
+:root {
+    --letsgather-blue: #020C45;
+    --letsgather-yellow: #FFD700;
+}
+
+.navbar-custom {
+    background-color: var(--letsgather-blue) !important;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: white !important;
+}
+
+.navbar-custom .navbar-nav .nav-link.active {
+    color: var(--letsgather-yellow) !important;
+    border-bottom: 2px solid var(--letsgather-yellow); 
+}
+
+.hero-section {
+    background-color: var(--letsgather-blue) !important;
+    color: white !important; 
+}
+
+.icon-yellow {
+    color: var(--letsgather-yellow) !important;
+}
+
+.text-letsgather-blue {
+    color: var(--letsgather-blue) !important;
+}
+
+.bg-dark-custom {
+    background-color: var(--letsgather-blue) !important;
+}
+
+.img-card-cover {
+    height: 180px; 
+    object-fit: cover; 
+}
+
+.img-detail-cover {
+    height: 400px; 
+    object-fit: cover; 
+    width: 100%; 
+}
+.border-letsgather-blue {
+    border-color: var(--letsgather-blue) !important;
+}

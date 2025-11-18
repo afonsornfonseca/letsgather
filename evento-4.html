@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let'sGather - Aniversário Surpresa</title>
+    <link rel="shortcut icon" href="imgs/logo-cima.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/custom.css"> 
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img style="max-height: 80px;width: auto;" src="imgs/logo-min.png" alt="Logo Let'sGather" srcset="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu-principal">
+            <div class="navbar-nav nav-underline ms-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="eventos.html">Eventos</a>
+                <a class="nav-link" href="criar-evento.html">Criar Evento</a>
+                <a class="nav-link" href="contactos.html">Sobre Nós</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main class="container my-5">
+       <div class="row mb-5">
+            <div class="col-12 text-center">
+                <img src="imgs/aiversario2.jpg" alt="Aniversário Surpresa" class="img-fluid rounded shadow img-detail-cover">
+             </div>
+            <div class="col-12 text-center mt-4">
+                <h1 class="display-4 text-letsgather-blue">Aniversário Surpresa</h1>
+                <p class="lead">Celebre o dia especial do nosso colega! Mantenha segredo!</p>
+                <h3 class="mt-4 icon-yellow">15.06 | Casa do João | 19:00h</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="p-4 border rounded shadow-sm bg-light">
+                    <h2 class="text-letsgather-blue mb-4">Confirmação de Presença</h2>
+                    <form action="trataPresenca.php" method="post">
+                        <div class="mb-3">
+                            <label for="f-nome" class="form-label">Seu Nome</label>
+                            <input id="f-nome" type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label d-block">Estará presente?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="presenca" value="Sim" required>
+                                <label class="form-check-label">Sim</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="presenca" value="Talvez">
+                                <label class="form-check-label">Talvez</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="presenca" value="Nao">
+                                <label class="form-check-label">Não</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-letsgather-blue w-100">Confirmar Presença</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-dark-custom text-white pt-5 mt-5">
+    <div class="container">
+        
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-6 text-center">
+                <h3 class="mb-2 fw-bold icon-yellow fs-5">Let'sGather</h3> 
+            </div>
+        </div>
+        
+        <div class="row pb-3 border-bottom border-secondary">
+            
+            <div class="col-md-6 d-flex justify-content-start align-items-center">
+                <ul class="list-unstyled d-flex gap-4 mb-0 fs-6">
+                    <li><a href="contactos.html" class="text-white text-decoration-none">Sobre Nós</a></li>
+                    <li><a href="eventos.html" class="text-white text-decoration-none">Ver Eventos</a></li>
+                    <li><a href="criar-evento.html" class="text-white text-decoration-none">Criar Evento</a></li>
+                    <li><a href="contactos.html" class="text-white text-decoration-none">Contactos</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-md-6 d-flex justify-content-end align-items-center">
+                <ul class="list-unstyled d-flex gap-4 mb-0 fs-4">
+                    <li><a href="#" class="text-white"><i class="bi bi-instagram"></i></a></li>
+                    <li><a href="#" class="text-white"><i class="bi bi-facebook"></i></a></li>
+                    <li><a href="#" class="text-white"><i class="bi bi-linkedin"></i></a></li>
+                    <li><a href="mailto:info@letsgather.com" class="text-white"><i class="bi bi-envelope"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row pt-3 pb-3 align-items-center">
+            
+            <div class="col-md-4">
+                <ul class="list-unstyled mb-0">
+                    <li><a href="#" class="text-muted text-decoration-none">Livro de Reclamações Online</a></li>
+                    <li><a href="#" class="text-muted text-decoration-none">Política de Cookies</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-md-4 text-center">
+                <img src="imgs/logo-min.png" alt="Logo Let'sGather" style="max-height: 50px; width: auto;" class="img-fluid">
+            </div>
+            
+            <div class="col-md-4 text-end">
+                <p class="mb-0 text-muted">Copyright © 2025 Let'sGather</p>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
