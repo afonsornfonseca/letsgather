@@ -47,3 +47,20 @@
 .border-letsgather-blue {
     border-color: var(--letsgather-blue) !important;
 }
+
+.btn-letsgather-blue {
+    background-color: var(--letsgather-blue); 
+    border-color: var(--letsgather-blue);     
+    color: white !important;
+    font-weight: 500;
+    transition: all 0.3s ease; 
+}
+
+
+.btn-letsgather-blue:hover {
+    background-color: #FFD700 !important; 
+    border-color: #FFD700 !important;
+    color: #000 !important; 
+    transform: scale(1.02); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+}
