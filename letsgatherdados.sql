@@ -14,6 +14,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- A despejar estrutura da base de dados para matchpoint
+CREATE DATABASE IF NOT EXISTS `matchpoint` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `matchpoint`;
+
 -- A despejar estrutura para tabela matchpoint.eventos
 CREATE TABLE IF NOT EXISTS `eventos` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -32,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   CONSTRAINT `eventos_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- A despejar dados para tabela matchpoint.eventos: ~13 rows (aproximadamente)
+-- A despejar dados para tabela matchpoint.eventos: ~1 rows (aproximadamente)
 INSERT INTO `eventos` (`id`, `user_id`, `nome`, `tipo`, `data_evento`, `hora_evento`, `local_evento`, `descricao`, `imagem`, `visibilidade`, `created_at`) VALUES
 	(2, 1, 'Aniversário', 'social', '2026-01-19', '16:00:00', 'Alcanena, Santarém', '', 'evento_69406b056a4d8.jpg', 'publico', '2025-12-15 20:09:41'),
 	(3, 1, 'Bem Vindos a 2026!', 'social', '2025-12-31', '18:30:00', 'Quinta do Outeiro (Rua Outeiro da Cruz- 3140-563 Tentúgal).', 'Receba 2026 com uma festa inesquecível, a melhor vista para o fogo de artifício e música pela noite dentro!', 'evento_69418cb209b69.jpg', 'publico', '2025-12-16 16:45:38'),
@@ -48,6 +53,22 @@ INSERT INTO `eventos` (`id`, `user_id`, `nome`, `tipo`, `data_evento`, `hora_eve
 	(13, 1, 'Sessão de Cinema', 'desportivo', '2026-02-08', '23:00:00', ' Cinema City Forum Coimbra-Av. José Bonifácio de Andrade e Silva Lotes 1 e 2, 3040-389 Coimbra', 'Sessão relaxada com pipocas e o filme mais aguardado. Perfeito para encerrar o fim-de-semana.', 'evento_694190f1f01d4.png', 'publico', '2025-12-16 17:03:45'),
 	(14, 1, 'Sunset no Mondego', 'social', '2026-08-20', '15:30:00', 'Parque Verde do Mondego, Coimbra', 'Venha aproveitar o fim de tarde com boa música, bebidas frescas e a melhor vista sobre o rio. Traga amigos e boa disposição! O ponto de encontro é junto às esplanadas do urso.', 'evento_6941919d2cb7d.jpg', 'publico', '2025-12-16 17:06:37');
 
+-- A despejar estrutura para tabela matchpoint.participacoes
+CREATE TABLE IF NOT EXISTS `participacoes` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `evento_id` int NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `status` enum('Sim','Talvez','Nao') NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `evento_id` (`evento_id`),
+  CONSTRAINT `participacoes_ibfk_1` FOREIGN KEY (`evento_id`) REFERENCES `eventos` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- A despejar dados para tabela matchpoint.participacoes: ~0 rows (aproximadamente)
+INSERT INTO `participacoes` (`id`, `evento_id`, `nome`, `status`, `created_at`) VALUES
+	(1, 2, 'Afonso', 'Sim', '2025-12-16 15:53:41');
+
 -- A despejar estrutura para tabela matchpoint.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -59,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- A despejar dados para tabela matchpoint.users: ~2 rows (aproximadamente)
+-- A despejar dados para tabela matchpoint.users: ~0 rows (aproximadamente)
 INSERT INTO `users` (`id`, `nome`, `email`, `password`, `created_at`) VALUES
 	(1, 'Afonso', 'afonso@gmail.com', '$2y$10$buW1Gs25kQLhxqcIO0X0u.2eBkyH90rbV.n69376SO9z.sSJhqR.6', '2025-12-15 19:49:33'),
 	(2, 'João', 'joao@gmail.com', '$2y$10$0wrbcN13tACCw7agsAtutuKkPpVwiBTMFTrxA09Ik0pRgCI1Oz6qu', '2025-12-15 20:15:22');

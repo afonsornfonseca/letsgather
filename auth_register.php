@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO users (nome, email, password) VALUES (?, ?, ?)";
     $stmt = $dbh->prepare($sql);
     
-    if ($stmt->execute([$nome, $email, $passwordHash])) {in
+    if ($stmt->execute([$nome, $email, $passwordHash])) {
         header("Location: login.php?sucesso=registado");
     } else {
         echo "Erro ao registar.";
